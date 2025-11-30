@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+"""
+Processa um arquivo de keystrokes SIMULADO e grava relatório local.
+Uso: python simulate_keylogger.py --input fake_keystrokes.log
+"""
+import argparse
+from pathlib import Path
+
+def main(inp):
+    p = Path(inp)
+    if not p.exists():
+        raise SystemExit("Arquivo de entrada não encontrado.")
+    out = Path("processed_logs")
+    out.mkdir(exist_ok=True)
+    rpt = out / ("report_" + p.name)
+    # lê e "finge" que foi coletado furtivamente,
+    # mas apenas processa o arquivo simulado.
+    with open(p, "r", encoding="utf-8") as fin, open(rpt, "w", encoding="utf-8") as fout:
+        fout.write("=== RELATÓRIO DE LOGS (SIMULADO) ===\n\n")
+        for line in fin:
+            # aqui poderia haver anonimização / análise para estudo
+            fout.write(line)
+    print(f"Processado. Relatório em {rpt}")
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--input", required=True)
+    args = ap.parse_args()
+    main(args.input)
