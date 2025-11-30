@@ -1,24 +1,36 @@
-# Simulações Seguras: Ransomware & Keylogger (Educational)
+# Projeto Educacional: Simulação de Ransomware e Keylogger (Seguro)
 
-> Projeto pedagógico que **simula** comportamentos de malware sem causar dano. Uso exclusivo em ambiente controlado e legal.
+Este repositório contém **simulações seguras e didáticas** de comportamentos comuns de malwares, utilizando Python, com foco em **aprendizado**, **análise de riscos** e **defesa**.  
+Nenhum arquivo é destruído, criptografado de verdade ou coletado no sistema real.
 
-## Conteúdo
-- `create_test_files.py` — gera arquivos de teste.
-- `simulate_ransom.py` — simulação não destrutiva de "encrypt" (marca/copias).
-- `fake_keystrokes_generator.py` — cria um arquivo com keystrokes simulados.
-- `simulate_keylogger.py` — processa o arquivo simulado em vez de capturar teclas reais.
-- `defense.md` — medidas de prevenção e detecção.
+## ⚠️ Aviso Importante
+Este projeto é **exclusivamente para fins educacionais**, seguindo boas práticas éticas e legais.  
+Executar apenas em **máquinas virtuais isoladas** e sob seu controle.
 
-## Requisitos
-- Python 3.8+
-- Executar somente em VMs isoladas com snapshot.
+---
 
-## Como usar (modo seguro)
-1. Crie snapshot da VM.  
-2. `python3 create_test_files.py` — gera pasta `test_files/` com arquivos de exemplo.  
-3. `python3 simulate_ransom.py --target test_files/` — simula encriptação **não destrutiva**.  
-4. `python3 fake_keystrokes_generator.py` — gera `fake_keystrokes.log`.  
-5. `python3 simulate_keylogger.py --input fake_keystrokes.log` — processa o arquivo simulado.  
+## 📌 Funcionalidades
 
-## Observações éticas e legais
-Este repositório não deve ser usado para atividade maliciosa. Use apenas para aprendizado autorizado.
+### 🔒 Simulação de Ransomware
+- Gera arquivos de teste.
+- Cria cópias marcadas como “simuladamente criptografadas”.
+- NÃO altera nem remove arquivos originais.
+- Cria um arquivo de “mensagem de resgate” fictício.
+
+### 🎹 Simulação de Keylogger
+- Gera um arquivo com “teclas falsas”.
+- Processa esse arquivo como se fosse um keylogger.
+- Não captura teclas reais do sistema.
+
+### 🛡️ Defesa
+Inclui um documento com boas práticas de proteção contra malware:
+- Prevenção  
+- Detecção  
+- Mitigação  
+- Hardening  
+- Conscientização do usuário  
+
+---
+
+## 📁 Estrutura do Repositório
+
